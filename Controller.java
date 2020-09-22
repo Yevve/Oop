@@ -8,11 +8,11 @@ public Controller(){
 }    
 
 public void encryptButtonClicked(){
-String key= view.getEncryptionKey();
-String inputText=view.getInputText();
-encryptionEngine.setEncryptionKey(Integer.parseInt(key));
-String outputText = encryptionEngine.encrypt(inputText);
-view.setOutputText(outputText);
+    String key= view.getEncryptionKey();
+    String inputText=view.getInputText();
+    encryptionEngine.setEncryptionKey(Integer.parseInt(key));
+    String outputText = encryptionEngine.encrypt(inputText);
+    view.setOutputText(outputText);
 }
 public void decryptButtonClicked(){
     String key= view.getEncryptionKey();
