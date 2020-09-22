@@ -25,9 +25,7 @@ public class View extends JFrame {
 	private JButton encryptButton;
 	private JButton decryptButton;
     
-    public static void main(String[] args) {
-        
-    }
+  
     public void setOutputText(String outputText) {
     	outputTextTextField.setText(outputText);
     }
@@ -36,9 +34,9 @@ public class View extends JFrame {
     	return inputTextTextField.getText();
     }
     
-    public String getEncryptionKey() {
+    public int getEncryptionKey() {
         // get the encryption key from the corresponding text field, and make it an integer
-    	return "";
+    	return Integer.parseInt(encryptionKeyTextField.getText());
     }
 
     
@@ -82,6 +80,7 @@ public class View extends JFrame {
 		encryptButton.addActionListener(new ActionListener() {
 			@Override
         	public void actionPerformed(ActionEvent e) {
+                controller.encryptButtonClicked();
 				// call corresponding controller method
 			}
 		});
@@ -89,6 +88,7 @@ public class View extends JFrame {
 		decryptButton.addActionListener(new ActionListener() {
 			@Override
         	public void actionPerformed(ActionEvent e) {
+                controller.decryptButtonClicked();
 				// call corresponding controller method
 			}
 		});

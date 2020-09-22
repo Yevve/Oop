@@ -1,13 +1,18 @@
 public class Controller {
     
-public View _view;
+private View view;
+private EncryptionEngine encryptionEngine;
 public Controller(){
-    this._view=new View(this);
-    _view.setVisible(true);
+    this.view=new View(this);
+    encryptionEngine=new EncryptionEngine(this);
 }    
 
 public void encryptButtonClicked(){
-
+String inputText=view.getInputText();
+view.getEncryptionKey();
+String outputText = "bajs";
+encryptionEngine.encrypt(inputText);
+view.setOutputText(outputText);
 }
 public void decryptButtonClicked(){
 
