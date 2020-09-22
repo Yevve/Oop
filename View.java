@@ -34,9 +34,9 @@ public class View extends JFrame {
     	return inputTextTextField.getText();
     }
     
-    public int getEncryptionKey() {
+    public String getEncryptionKey() {
         // get the encryption key from the corresponding text field, and make it an integer
-    	return Integer.parseInt(encryptionKeyTextField.getText());
+    	return encryptionKeyTextField.getText();
     }
 
     

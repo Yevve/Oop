@@ -8,14 +8,18 @@ public Controller(){
 }    
 
 public void encryptButtonClicked(){
+String key= view.getEncryptionKey();
 String inputText=view.getInputText();
-view.getEncryptionKey();
-String outputText = "bajs";
-encryptionEngine.encrypt(inputText);
+encryptionEngine.setEncryptionKey(Integer.parseInt(key));
+String outputText = encryptionEngine.encrypt(inputText);
 view.setOutputText(outputText);
 }
 public void decryptButtonClicked(){
-
+    String key= view.getEncryptionKey();
+    String inputText=view.getInputText();
+    encryptionEngine.setEncryptionKey(Integer.parseInt(key));
+    String outputText = encryptionEngine.decrypt(inputText);
+    view.setOutputText(outputText);
 }
 
 }

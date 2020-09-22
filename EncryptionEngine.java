@@ -1,9 +1,11 @@
 public class EncryptionEngine {
 public Controller controller;
 public int encryptionKey;
+    
 
+    
     public EncryptionEngine(Controller controller){
-
+        
 
     }
     public void setEncryptionKey(int key){
@@ -15,38 +17,33 @@ public int encryptionKey;
     }
 
     public String encrypt(String inputText){
-        int key=getEncryptionKey();
+        
         char[] inCharArr = inputText.toCharArray();
-        for (int i=0;i<=inCharArr.length;i+=1){
-            if (Character.isUpperCase(inCharArr[i])){
-                char ch = (char)(((int)inCharArr[i] + key - 65) % 26 + 65); 
-                inCharArr[i]+=ch;
-            }
-            else
-            { 
-                char ch = (char)(((int)inCharArr[i] + key - 97) % 26 + 97); 
-                inCharArr[i]+=ch;
-            } 
+        for (int i=0;i<inputText.length();i++){
+            
+                inCharArr[i] = (char) (((((int)inCharArr[i] - 'A') +encryptionKey )% 26 )+ 'A'); 
+                 
         }
-        String outputText =String.valueOf(inCharArr);
-        return outputText;
+        return new String (inCharArr);
+        
     }
 
     public String decrypt(String inputText){
-    int key=getEncryptionKey();
-    char[] inCharArr = inputText.toCharArray();
-    for (int i=0;i<=inCharArr.length;i+=1){
-        if (Character.isUpperCase(inCharArr[i])){
-            char ch = (char)(((int)inCharArr[i] + 
-                                  key - 65) % 26 + 65); 
-                
+    
+        char[] inCharArr = inputText.toCharArray();
+        for (int i=0;i<inputText.length();i++){
+            
+                inCharArr[i] = (char) (((((int)inCharArr[i] - 'A') -encryptionKey )% 26 )+ 'A'); 
+                 
         }
-        
-        
-
+        return new String (inCharArr);
 
     }
-    return null;
+
+    
+
+    public void setController(Controller controller) {
+        this.controller = controller;
     }
 
 
