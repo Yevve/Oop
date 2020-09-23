@@ -14,7 +14,7 @@ public void encryptButtonClicked(){
     String key= view.getEncryptionKey();
     char[] keyCha=key.toCharArray();
     for(int i=0;i<key.length();i+=1){
-        if(Character.isAlphabetic(keyCha[i])){
+        if(!Character.isDigit(keyCha[i])){
             throw new Exception("Not a numerical key");
         }
     }
