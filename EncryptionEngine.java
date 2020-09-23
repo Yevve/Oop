@@ -33,7 +33,7 @@ public int encryptionKey;
         char[] inCharArr = inputText.toCharArray();
         for (int i=0;i<inputText.length();i++){
             
-                inCharArr[i] = (char) (((((int)inCharArr[i] - 'A') -encryptionKey+26 )% 26 )+ 'A'); 
+                inCharArr[i] = (char) ((((((int)inCharArr[i] - 'A') -encryptionKey%26)+26 )% 26 )+ 'A'); 
                  
         }
         return new String (inCharArr);
