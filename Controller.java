@@ -15,7 +15,7 @@ public void encryptButtonClicked(){
     char[] keyCha=key.toCharArray();
     for(int i=0;i<key.length();i+=1){
         if(!Character.isDigit(keyCha[i])){
-            throw new Exception("Not a numerical key");
+            throw new Exception("Not a numerical key!");
         }
     }
     String inputText=view.getInputText();
@@ -42,8 +42,8 @@ public void decryptButtonClicked(){
         String key= view.getEncryptionKey();
         char[] keyCha=key.toCharArray();
         for(int i=0;i<key.length();i+=1){
-            if(Character.isAlphabetic(keyCha[i])){
-                throw new Exception("Not a numerical key");
+            if(!Character.isDigit(keyCha[i])){
+                throw new Exception("Not a numerical key!");
             }
         }
         String inputText=view.getInputText();
